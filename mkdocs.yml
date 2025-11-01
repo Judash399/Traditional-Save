@@ -1,0 +1,58 @@
+site_name: TraditionalSave
+theme:
+  name: material
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    search: fontawesome/solid/search
+  palette:
+  - scheme: default   # Light mode
+    primary: custom
+    accent: custom
+    
+    toggle:
+      icon: fontawesome/solid/sun
+      name: Switch To dark mode
+
+  - scheme: slate     # Dark mode
+    primary: custom
+    accent: custom
+    toggle:
+      icon: fontawesome/solid/moon
+      name: Switch to light mode
+
+  features:
+      - navigation.instant
+      - navigation.instant.prefetch
+      - navigation.instant.progress
+      - navigation.tabs 
+      - navigation.sections
+      - navigation.path
+      - navigation.indexes
+      - navigation.top
+      - navigation.footer
+      - header.autohide
+      - search.suggest
+      - search.highlight
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+extra_css:
+  - docsAssets/style.css
+  - docsAssets/colors.css
+  - docsAssets/smooth-scroll.css
