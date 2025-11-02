@@ -31,6 +31,8 @@ theme:
 
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
   - attr_list
   - pymdownx.superfences
   - pymdownx.highlight:
@@ -41,7 +43,6 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
 
 extra_css:
   - docsAssets/style.css

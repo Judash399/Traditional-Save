@@ -1,7 +1,15 @@
 # Store
 
+## Description
+The Store is the core object that connects Roblox DataStores with TraditionalSave, serving as the foundation that all other TraditionalSave classes attach to. Stores manage core features such as the save interval, and [Profile](../Profile) creation.
 
 ## <img src="/docsAssets/property.png" width="20"> Properties
+
+### StoreName: string
+The name of the datastore that the Store will use. This is not recomended to be changed after creation because the DataStore being used will **not** update.
+
+### Config: [StoreConfig](../Types/StoreConfig)
+The configuration table that is used for everything that uses this store. This can be modified after creation but it is likely that certain properties and methods will not update.
 
 ## <img src="/docsAssets/function.png" width="20"> Methods
 
@@ -54,3 +62,25 @@ Creates a new [Profile](../Profile) attached to a player using the players userI
 * *Profile* - The created [Profile](../Profile), or an [Error](../Error) object.
 
 ## <img src="/docsAssets/event.png" width="20"> Signals
+
+### OnProfileAdded
+
+<h4> Fires: </h4>
+Fires whenever a profile is added to the store.
+
+<h4> Arguments: </h4>
+* *[Profile](../Profile)* - The profile that was added.
+
+### OnProfileRemoving
+<h4> Fires: </h4>
+Fires right before a profile is removed from the store.
+
+<h4> Arguments: </h4>
+* *[Profile](../Profile)* - The profile thats being removed.
+
+### OnProfileCreated
+<h4> Fires: </h4>
+Fires whenever a profile is added that has no data attached to it, and was created for the first time.
+
+<h4> Arguments: </h4>
+* *[Profile](../Profile)* - The profile that was created.
