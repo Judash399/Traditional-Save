@@ -1,6 +1,8 @@
 site_name: TraditionalSave
 theme:
   name: material
+  logo: docsAssets/Icon.png
+  favicon: docsAssets/Icon.png
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
