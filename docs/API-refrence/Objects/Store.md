@@ -36,11 +36,11 @@ Returns a [PlayerProfiles](../PlayerProfiles) object for the given `Store`, call
 Store:NewProfile(Key)
 ```
 <h4> Description:</h4>
-Returns either a [Profile](../Profile) thats attached to the given [Key](../Types/Key), or an [Error](../Error) object.
+Returns either a [Profile](../Profile) thats attached to the given [Key](../../Types/Key), or an [Error](../Error) object.
 
 <h4>Parameters:</h4>
 * *Store* - The Store in which the [Profile](../Profile) will be attached.
-* *Key* - the [Key](../Types/Key) attached to the profile.
+* *Key* - the [Key](../../Types/Key) attached to the profile.
 
 <h4>Returns:</h4>
 * *Profile* - The created [Profile](../Profile), or an [Error](../Error) object.
