@@ -8,20 +8,9 @@ theme:
     next: fontawesome/solid/angle-right
     search: fontawesome/solid/search
   palette:
-  - scheme: default   # Light mode
-    primary: custom
-    accent: custom
-    
-    toggle:
-      icon: fontawesome/solid/sun
-      name: Switch To dark mode
-
   - scheme: slate     # Dark mode
     primary: custom
     accent: custom
-    toggle:
-      icon: fontawesome/solid/moon
-      name: Switch to light mode
 
   features:
       - navigation.instant

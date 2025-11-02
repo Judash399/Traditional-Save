@@ -1,6 +1,9 @@
 # Store
 
-## Methods
+
+## <img src="/docsAssets/property.png" width="20"> Properties
+
+## <img src="/docsAssets/function.png" width="20"> Methods
 
 ### ProfileFromPlayers
 ``` lua
@@ -49,3 +52,5 @@ Creates a new [Profile](../Profile) attached to a player using the players userI
 
 <h4>Returns:</h4>
 * *Profile* - The created [Profile](../Profile), or an [Error](../Error) object.
+
+## <img src="/docsAssets/event.png" width="20"> Signals
