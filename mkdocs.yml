@@ -8,7 +8,7 @@ theme:
     next: fontawesome/solid/angle-right
     search: fontawesome/solid/search
   palette:
-  - scheme: slate     # Dark mode
+    scheme: slate
     primary: custom
     accent: custom
 
@@ -48,3 +48,36 @@ extra_css:
   - docsAssets/style.css
   - docsAssets/colors.css
   - docsAssets/smooth-scroll.css
+
+nav:
+  - Home: index.md
+  - The Basics:
+    - Quick Start:
+      - Why This?: the-basics/Quick-Start/why-this.md
+      - Download: the-basics/Quick-Start/download.md
+      - Getting Started: the-basics/Quick-Start/getting-started.md
+    - Fundamentals:
+      - Stores: the-basics/Fundamentals/Stores.md
+      - Profiles: the-basics/Fundamentals/Profiles.md
+      - Loaders: the-basics/Fundamentals/Loaders.md
+      - PlayerProfiles: the-basics/Fundamentals/PlayerProfiles.md
+    - Specifics:
+      - Binding To Loaders: the-basics/Specifics/Binding-To-Loaders.md
+      - Locked Loaders: the-basics/Specifics/Locked-Loaders.md
+      - Profile Methods: the-basics/Specifics/Profile-Methods.md
+      - Updating Loaders: the-basics/Specifics/Updating-Loaders.md
+    - Best Practices:
+      - Global Data: the-basics/Best-Practices/Global-Data.md
+      - Spliting up your data: the-basics/Best-Practices/Spliting-up-your-data.md
+      - What is session locking?: the-basics/Best-Practices/What-is-session-locking.md
+  - API Reference:
+    - API-Reference/index.md
+    - Types:
+      - Error: API-Reference/Types/Error.md
+      - Key: API-Reference/Types/Key.md
+      - FileKey: API-Reference/Types/FileKey.md
+    - Objects:
+      - Store: API-Reference/Objects/Store.md
+      - Profile: API-Reference/Objects/Profile.md
+      - Loader: API-Reference/Objects/Loader.md
+      - PlayerProfiles: API-Reference/Objects/PlayerProfiles.md

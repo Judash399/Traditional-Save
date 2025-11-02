@@ -20,7 +20,7 @@ Returns the data for the currently loaded file. Throws an error if there is no l
 * *Loader* - The loader you want to get the data from.
 
 <h4>Returns:</h4>
-* *Data* - A refrence to the data the in the loaded file.
+* *Data* - A reference to the data the in the loaded file.
 
 <br>
 

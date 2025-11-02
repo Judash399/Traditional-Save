@@ -22,7 +22,7 @@ Creteas a new *[Loader](../Loader)* Object attached to the given *Profile*.
 
 <h4>Parameters</h4>
 * *Profile* - The Profile which the *[Loader](../Loader)* will be attached too.
-* *ID* - The Identifier used to refrence this *[Loader](../Loader)*.
+* *ID* - The Identifier used to reference this *[Loader](../Loader)*.
 * *DefaultData* - The data that new files will be, and the data which will fill into empty keys if the default is a table.
 * *DefaultKey?* - An optional Parameter that lets you select what file the *[Loader](../Loader)* will be loaded into initially.
 * *Locked?* - An optional Parameter that determines if the created *[Loader](../Loader)* is locked. For more information, check out [Locked Loaders](../../the-basics/locked-loaders).
@@ -41,7 +41,7 @@ Creteas a new *[Loader](../Loader)* Object attached to the given *Profile* with 
 
 <h4>Parameters:</h4>
 * *Profile* - The Profile which the *[Loader](../Loader)* will be attached too.
-* *ID* - The Identifier used to refrence this *[Loader](../Loader)*.
+* *ID* - The Identifier used to reference this *[Loader](../Loader)*.
 * *DefaultData* - The data that new files will be, and the data which will fill into empty keys if the default is a table.
 * *UpdateInterval* - How often it will call the `Save()` method on the loader.
 * *DefaultKey?* - An optional Parameter that lets you select what file the *[Loader](../Loader)* will be loaded into initially.
@@ -57,7 +57,7 @@ Creteas a new *[Loader](../Loader)* Object attached to the given *Profile* with 
 Proflie:Destroy()
 ```
 <h4>Description:</h4>
-Removes all dependencys and strong connections to the Profile, and turns it into a frozen empty table. The Profile will get garbage collected once you remove your remaining refrences to it. 
+Removes all dependencys and strong connections to the Profile, and turns it into a frozen empty table. The Profile will get garbage collected once you remove your remaining references to it. 
 
 <h4>Parameters:</h4>
 * *Profile* - The Profile you want to destroy.
