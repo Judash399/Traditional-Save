@@ -67,9 +67,7 @@ nav:
       - Profile Methods: the-basics/Specifics/Profile-Methods.md
       - Updating Loaders: the-basics/Specifics/Updating-Loaders.md
     - Best Practices:
-      - Global Data: the-basics/Best-Practices/Global-Data.md
-      - Spliting up your data: the-basics/Best-Practices/Spliting-up-your-data.md
-      - What is session locking?: the-basics/Best-Practices/What-is-session-locking.md
+      - Global Files: the-basics/Best-Practices/Global-Files.md
   - API Reference:
     - API-Reference/index.md
     - Types:
