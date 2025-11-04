@@ -1,7 +1,7 @@
 # Loader
 
 ## Description
-A Loader is an object attached to a [Profile](../Profile) that provides access to a file. It allows you to read, modify, save, and unload the data, as well as bind objects to a file so they get destroyed when the file is unloaded.
+A Loader is an object attached to a [Profile](../Profile.md) that provides access to a file. It allows you to read, modify, save, and unload the data, as well as bind objects to a file so they get destroyed when the file is unloaded.
 
 ## <img src="/docsAssets/property.png" width="20"> Properties
 
@@ -29,7 +29,7 @@ Returns the data for the currently loaded file. Throws an error if there is no l
 Loader:Save(NewData?)
 ```
 <h4>Description:</h4>
-Marks the [Profile](../Profile) the given loader is attached too, to save the currently loaded file. Uses NewData as the files new data if its passed or just `Loader.Data`.
+Marks the [Profile](../Profile.md) the given loader is attached too, to save the currently loaded file. Uses NewData as the files new data if its passed or just `Loader.Data`.
 
 <h4>Parameters:</h4>
 * *Loader* - The loader you want to save from.
