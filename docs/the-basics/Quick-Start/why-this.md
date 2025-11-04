@@ -4,9 +4,17 @@ You may be asking yourself:
 
 > "Why use this over any other data-store module."
 
-And that is a perfectly understandable question to have, and props to your for sticking around long enough to check the documentation. This entire page is a bunch of me just writing whatever comes to head about TraditionalSave1's issue, and I will not be offended if you skip over this. But the main reason to use this is because it simplifys the process of save data, and trys at a new way of managing save data.
+And that is a perfectly understandable question to have, and props to your for sticking around long enough to check the documentation.
+
+!!! note "Please Note"
+    This entire page is a bunch of me just writing whatever comes to head about TraditionalSave1's issue, and I will not be offended if you skip over this. 
+    
+    The main reason to use this TraditionalSave2 because it simplifys the process of save data, and trys at a new way of managing save data.
 
 Ok, the rest of this is my writing whatever. So lets start on TraditionalSave1's problem:
+
+!!! warning "Remember"
+    This is the only page that refers *TraditionalSave1* as *TraditionalSave*. Every other page refers to *TraditionalSave2* as *TraditionalSave*.
 
 ## The problem
 TraditionalSave2 is a save data module for roblox that proposes a new way of storing and interacting with player save data. The methods *TraditionalSave2* makes many improvments from *TraditionalSave* enough where It is a very unique, elegant, and distinct way from interacting with player data.

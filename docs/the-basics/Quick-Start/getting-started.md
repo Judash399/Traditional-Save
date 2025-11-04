@@ -1,22 +1,41 @@
 # Getting Started
-Once you have the model downloaded, require the module in a new server script and module script. and write this
-=== "Main.lua"
+Once you have the module downloaded, require the module in a new module script. and write this
 
-    ``` lua
-    local TraditionalSave2 = --Reference to the module
+``` lua
+--!strict --You don't need this, but TraditionalSave2 works with strict mode!
 
-    local store = TraditionalSave2.GetStore("PlayerData", {})
+local TraditionalSave2 = --Reference to the module
 
-    store:ProfileFromPlayers(function(profile: TraditionalSave2.Profile)
-        local MainLoader = profile:CreateLoader("SaveSlots", {})
-    end)
-    ```
+local store = TraditionalSave2.GetStore("PlayerData", {})
 
-=== "Profiles.lua"
+-- Creates a PlayerProfiles object which manages profiles for players.
+local profiles = store:ProfileFromPlayers(function(profile)
+    local MainLoader = profile:CreateLoader("SaveSlots", {})
 
-    ```lua
-   local profiles = {}
+    --Define custom methods.
+    profile:SetMethods({
+        foo = function()
 
-   return profiles
-    ```
-This is the recomended setup for 'TraditonalSave' that is both scalable and recomended
+        end
+    })
+end)
+
+return profiles
+```
+
+Then, other scripts can require this module and do what they want with the profiles.
+
+``` lua
+local profiles = --Refrence to module
+
+
+local profile = profiles.Profiles[player]
+
+--Run a custom method
+profile.Methods.foo()
+```
+
+This is the recomended setup for *TraditonalSave2* that is both scalable, and easily maintainable. 
+
+!!! warning "Important!"
+    For this method to work, you need to have at least 1 script that requires the `profiles` module at runtime! Or else bugs may occur!
