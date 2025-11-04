@@ -4,20 +4,10 @@ hide:
   - navigation
   - title
 ---
-# Welcome to MkDocs
+# Home
+Welcome to the *TraditionalSave2* Documentation! *TraditionalSave2* is a DataStore module for roblox which proposes a new way of managing save data by spliting data into seperate files. 
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+<div>
+    <a href="the-basics/Quick-Start/why-this/" class="md-button md-button--primary">Get Started &#8594;</a>
+    <a href="API-Reference/" class="md-button">API Reference</a>
+  </div>
