@@ -78,6 +78,47 @@ For more information check out [Defining Methods](../../the-basics/defining-meth
 
 <br>
 
+### IsFileLoaded
+```lua
+Profile:IsFileLoaded(FileKey)
+```
+<h4>Description:</h4>
+Returns a boolean determining if the passed file is currently loaded by a *[Loader](../Loader)* attached to this profile.
+<h4>Parameters:</h4>
+* *Profile* - The profile you want to check.
+* *FileKey* - The [FileKey](../../Types/FileKey) for the file you want to check is loaded.
+<h4>Returns:</h4>
+* *Loaded* - Is the file loaded or not.
+
+<br>
+
+### CopyFile
+```lua
+Profile:CopyFile(FromKey, ToKey)
+```
+<h4>Description:</h4>
+Copies the data from the *FromKey* file into the *ToKey* file for this profile.
+
+<h4>Parameters:</h4>
+* *Profile* - The profile conatining the *from* and *to* files.
+* *FromKey* - The [FileKey](../../Types/FileKey) of the source file.
+* *ToKey* - The [FileKey](../../Types/FileKey) of the destination file.
+
+<br>
+
+### DeleteFile
+```lua
+Profile:DeleteFile(FileKey)
+```
+<h4>Description:</h4>
+Deletes the data from the *FileKey*.
+
+<h4>Parameters:</h4>
+* *Profile* - The profile contianing the file you want to delete.
+* *FromKey* - The [FileKey](../../Types/FileKey) for the file you want to delete.
+
+<br>
+
 ## <img src="/docsAssets/event.png" width="20"> Signals
 
 ### OnDestroying

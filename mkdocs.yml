@@ -74,6 +74,7 @@ nav:
       - Error: API-Reference/Types/Error.md
       - Key: API-Reference/Types/Key.md
       - FileKey: API-Reference/Types/FileKey.md
+      - StoreConfig: API-Reference/Types/StoreConfig.md
     - Objects:
       - Store: API-Reference/Objects/Store.md
       - Profile: API-Reference/Objects/Profile.md

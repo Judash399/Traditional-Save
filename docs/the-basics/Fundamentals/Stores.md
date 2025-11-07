@@ -41,4 +41,4 @@ local store = TraditionalSave2.GetStore("StoreName", {
 })
 ```
 
-For a full list of Config options, see the [API Reference](../../../API-Reference/Types/Config).
+For a full list of Config options, see the [API Reference](../../../API-Reference/Types/StoreConfig).
