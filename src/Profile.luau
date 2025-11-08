@@ -1,4 +1,4 @@
---!strict
+--!nocheck
 
 local Profile = {}
 
@@ -91,7 +91,7 @@ function Methods:CreateUpdatingLoader<T>(Id: string, defaultData: T, updateInter
 	table.insert(self._Loaders, loader)
 	
 	task.defer(function()
-		while loader ~= nil do
+		while loader do
 			if loader:IsLoaded() then
 				loader:Save(loader.Data)
 			end

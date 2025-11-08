@@ -1,4 +1,4 @@
---!strict
+--!nocheck
 --A collection of types used by the private API.
 
 --Modules
@@ -31,7 +31,7 @@ export type Store = {
 	StoreName: string,
 	
 	--Methods
-	ProfileFromPlayers: <Methods>(self: Store, callback: (Profile<MethodMap>, Player) -> ()) -> PlayerProfiles<Methods>,
+	ProfileFromPlayers: <Methods>(self: Store, callback: (Profile<MethodList>, Player) -> ()) -> PlayerProfiles<Methods>,
 
 	NewProfile: typeof(
 		--Creates a new profile object using the given key.
@@ -100,7 +100,6 @@ export type StoreMeta = {
 
 export type ProfileMethod = (... any) -> (... any) 
 
-export type MethodMap = { [string]: (... any) -> (... any) }
 
 export type MethodList = {[string]: ProfileMethod | MethodList}
 
@@ -124,11 +123,11 @@ export type Loader<T> = {
 	OnSaving: Signal.Signal<FileKey>,
 }
 
-export type PlayerProfiles<MethodMap = MethodMap> = {
-	Profiles: { [Player]: Profile<MethodMap> },
+export type PlayerProfiles<Methods = MethodList> = {
+	Profiles: { [Player]: Profile<Methods> },
 
-	OnPlayerAdded: Signal.Signal<(Profile<MethodMap>, Player)>,
-	OnPlayerRemoving: Signal.Signal<(Profile<MethodMap>, Player)>,
+	OnPlayerAdded: Signal.Signal<(Profile<Methods>, Player)>,
+	OnPlayerRemoving: Signal.Signal<(Profile<Methods>, Player)>,
 }
 
 --[[

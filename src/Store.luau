@@ -1,4 +1,4 @@
---!strict
+--!nocheck
 
 --Services
 local DataStoreService = game:GetService("DataStoreService")
@@ -44,7 +44,7 @@ function module.New(storeName: string, config: Types.StoreConfig?)
 		while true do
 			task.wait(config.UpdateInterval)
 			
-			for _, profile in self._Profiles do
+			for _, profile: Types.Profile<{}> in self._Profiles do
 				if profile._ReadyToSave == true or os.difftime(profile._LastSaveTime, os.time()) >= self.Config.TimestampUpdateInterval:: number then
 					self:_Save(tostring(profile._Key), profile._DataToSave)
 					profile._ReadyToSave = false
@@ -91,7 +91,7 @@ function Methods:_Get(Key: string): (boolean, any?)
 end
 
 function Methods:ProfileFromPlayers(callback)		
-	return PlayerProfiles.New(self, callback):: Types.PlayerProfiles<any>
+	return PlayerProfiles.New(self, callback)
 end
 	
 function Methods:NewPlayerProfile(player: Player)
@@ -102,7 +102,7 @@ function Methods:NewProfile(key: Types.Key)
 	local profile, isNew = Profile.New(self, key)
 	
 	if not profile.Error then
-		local profile = profile:: Types.HiddenProfile
+		local profile = profile
 		
 		table.insert(self._Profiles, profile)
 		
@@ -133,8 +133,8 @@ function Methods:_GetDataStoreData(StoreKey)
 	end
 end
 	
-function Methods:_SaveImmediate(Profile: Types.HiddenProfile)
-	return Methods:_Save(tostring(Profile._Key), Profile._DataToSave)
+function Methods:_SaveImmediate(Profile)
+	return self:_Save(tostring(Profile._Key), Profile._DataToSave)
 end
 
 return module

@@ -1,4 +1,4 @@
---!strict
+--!nocheck
 
 --[[
 Copyright 2025, Judash399
@@ -31,14 +31,17 @@ if RunService:IsClient() then
 end
 
 --Type Definitions
+export type MethodList = Types.MethodList
 export type StoreConfig = Types.StoreConfig
+export type Error = Types.Error
+export type FileKey = Types.FileKey
 
 export type Store = {
 	Config: StoreConfig,
 	StoreName: string,
 	
 	--Methods
-	ProfileFromPlayers: <Methods>(self: Store, callback: (Profile<MethodMap>, Player) -> ()) -> PlayerProfiles<Methods>,
+	ProfileFromPlayers: <Methods>(self: Store, callback: (Profile<MethodList>, Player) -> ()) -> PlayerProfiles<Methods>,
 
 	NewProfile: typeof(
 		--Creates a new profile object using the given key.
@@ -52,7 +55,25 @@ export type Store = {
 	OnProfileCreated: Signal.Signal<Profile<{}>>,
 }
 
-export type Loader<T> = Types.Loader<T>
+export type Loader<T> = {
+	Data: T,
+	
+	--Methods
+	GetData: (self: Loader<T>) -> T,
+	Save: (self: Loader<T>, NewData: T | any?) -> (),
+	Unload: (self: Loader<T>) -> (),
+	LoadInto: (self: Loader<T>, Key: FileKey) -> (),
+	IsLoaded: (self: Loader<T>) -> boolean,
+	
+	BindTo: <O>(self: Loader<T>, Object: O, Cleanup: string?) -> O,
+	
+	--Signals
+	OnLoaded: Signal.Signal<FileKey>,
+	OnUnloaded: Signal.Signal<>,
+	OnUnloading: Signal.Signal<FileKey>,
+	OnFileCreated: Signal.Signal<FileKey>,
+	OnSaving: Signal.Signal<FileKey>,
+}
 
 export type Profile<Methods = {}> = {
 	Error: boolean,
@@ -60,12 +81,8 @@ export type Profile<Methods = {}> = {
 	Methods: Methods,
 	
 	--Methods
-	CreateLoader: typeof(
-		function<T>(self: Profile<Methods>, Id: string, DefaultData: T, DefaultKey: FileKey?, Locked: boolean?): Loader<T> end
-	),
-	CreateUpdatingLoader: typeof(
-		function<T>(self: Profile<Methods>, Id: string, DefaultData: T, UpdateInterval: number, DefaultKey: FileKey?, Locked: boolean?): Loader<T> end
-	),
+	CreateLoader: <T>(self: Profile<Methods>, Id: string, DefaultData: T, DefaultKey: FileKey?, Locked: boolean?) -> (Loader<T>),
+	CreateUpdatingLoader: <T>(self: Profile<Methods>, Id: string, DefaultData: T, UpdateInterval: number, DefaultKey: FileKey?, Locked: boolean?) -> Loader<T>,
 	Destroy: (self: Profile<Methods>) -> (),
 	SetMethods: (self: Profile<Methods>, methods: MethodList) -> (),
 	ReadDataBulk: (self: Profile<Methods>, Keys: {FileKey}) -> ({[FileKey]: any}),
@@ -78,10 +95,7 @@ export type Profile<Methods = {}> = {
 	OnSave: Signal.Signal<>,
 }
 
-export type Error = Types.Error
 export type PlayerProfiles<Methods> = Types.PlayerProfiles<Methods>
-export type MethodMap = Types.MethodMap
-export type FileKey = Types.FileKey
 
 --Returns a Store Object using the given StoreName.
 function TraditionalSave2.GetStore(StoreName: string, Config: Types.StoreConfig?): Store

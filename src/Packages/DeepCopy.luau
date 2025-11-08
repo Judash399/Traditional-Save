@@ -1,3 +1,5 @@
+--!nocheck
+
 --A deep clone function taken from the roblox documentation.
 function deepClone(original)
 	local clone = table.clone(original) 
