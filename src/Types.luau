@@ -87,7 +87,7 @@ export type Store = {
 	StoreName: string,
 	
 	--Methods
-	ProfileFromPlayers: <Methods>(self: Store, callback: (Profile<MethodMap>) -> ()) -> PlayerProfiles<Methods>,
+	ProfileFromPlayers: <Methods>(self: Store, callback: (Profile<MethodMap>, Player) -> ()) -> PlayerProfiles<Methods>,
 
 	NewProfile: (self: Store, Key: Key) -> (Profile | Error),
 	NewPlayerProfile: (self: Store, Player: Player) -> Profile | Error,

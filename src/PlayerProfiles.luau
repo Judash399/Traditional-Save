@@ -30,7 +30,7 @@ function PlayerProfiles.New(Store: Types.HiddenStore, callback: (Types.Profile<T
 			return
 		end
 
-		callback(profile)
+		callback(profile, player)
 
 		self.Profiles[player] = profile
 		
