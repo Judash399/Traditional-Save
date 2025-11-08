@@ -1,0 +1,23 @@
+{
+	"name": "Test TraditionalSave",
+	"servePlaceIds": [
+		0
+	],
+	"tree": {
+		"$className": "DataModel",
+		"ServerScriptService": {
+			"$className": "ServerScriptService",
+            "Packages": {
+                "$className": "Folder",
+                "TraditionalSave2": {
+				    "$path": "default.project.json"
+			    }
+            },
+
+            "Test-Project": {
+                "$path": "test-project"
+            }
+			
+		}
+	}
+}
