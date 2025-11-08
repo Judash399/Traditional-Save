@@ -2,7 +2,7 @@
 --A collection of types used by the private API.
 
 --Modules
-local Signal = require(script.Parent.Packages.Signal)
+local Signal = require(script.Parent.Modules.Packages.Signal)
 
 export type StoreConfig = {
 	SeperateStudioData: boolean?,
@@ -24,7 +24,21 @@ export type StoreData = {
 	Files: {[FileKey]: any},
 }
 
---Types
+export type Error = {
+	Error: true,
+	Reason: string,
+}
+
+export type StoreMeta = {
+	ActiveSession: boolean,
+	LastTimeSave: number,
+	Version: string,
+}
+
+export type ProfileMethod = (... any) -> (... any) 
+
+export type MethodList = {[string]: ProfileMethod | MethodList}
+
 export type Store = {
 	--------PUBLIC API--------
 	Config: StoreConfig,
@@ -86,24 +100,8 @@ export type Profile<Methods = {}> = {
 	_Save: (self: Profile<Methods>) -> (),
 }
 
-export type Error = {
-	Error: true,
-	Reason: string,
-}
-
-
-export type StoreMeta = {
-	ActiveSession: boolean,
-	LastTimeSave: number,
-	Version: string,
-}
-
-export type ProfileMethod = (... any) -> (... any) 
-
-
-export type MethodList = {[string]: ProfileMethod | MethodList}
-
 export type Loader<T> = {
+	--------PUBLIC API--------
 	Data: T,
 	
 	--Methods
@@ -121,6 +119,17 @@ export type Loader<T> = {
 	OnUnloading: Signal.Signal<FileKey>,
 	OnFileCreated: Signal.Signal<FileKey>,
 	OnSaving: Signal.Signal<FileKey>,
+
+	--------PRIVATE API--------
+	_LoadedIntoFile: boolean,
+	_Profile: Profile<{}>,
+	_ID: string,
+	_Locked: boolean,
+	_DefaultData: T,
+	_Key: FileKey?,
+	
+	_BindedObjects: {{object: any, cleanup: string?}},
+	_Destroy: (self: Loader<T>) -> (),
 }
 
 export type PlayerProfiles<Methods = MethodList> = {
@@ -129,32 +138,5 @@ export type PlayerProfiles<Methods = MethodList> = {
 	OnPlayerAdded: Signal.Signal<(Profile<Methods>, Player)>,
 	OnPlayerRemoving: Signal.Signal<(Profile<Methods>, Player)>,
 }
-
---[[
-export type HiddenProfile = Profile & {
-	_Store: HiddenStore,
-	_Key: Key,
-	_DataStoreData: StoreData,
-	_DataToSave: StoreData, --Basicly the same thing as _DataStoreData, but it only updates when we call :_Save()
-	_ReadyToSave: boolean,
-	_LastSaveTime: number,
-	_Loaders: {Loader<any>},
-	
-	_GetFileData: (self: HiddenProfile, fileKey: FileKey, defaultData: any) -> (any, boolean),
-	_Save: (self: HiddenProfile) -> (),
-}
-
-export type HiddenLoader<T> = Loader<T> & {
-	_LoadedIntoFile: boolean,
-	_Profile: HiddenProfile,
-	_ID: string,
-	_Locked: boolean,
-	_DefaultData: T,
-	_Key: FileKey?,
-	
-	_BindedObjects: {{object: any, cleanup: string?}},
-	_Destroy: (self: HiddenLoader<T>) -> (),
-}
-]]
 
 return {}

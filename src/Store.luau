@@ -9,7 +9,7 @@ local Players = game:GetService("Players")
 local Types = require(script.Parent.Types)
 local ConfigDefaults = require(script.ConfigDefaults)
 local Profile = require(script.Parent.Profile)
-local Signal = require(script.Parent.Packages.Signal)
+local Signal = require(script.Parent.Modules.Packages.Signal)
 local PlayerProfiles = require(script.Parent.PlayerProfiles)
 
 local module = {}

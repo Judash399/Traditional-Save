@@ -7,8 +7,8 @@ Methods.__index = Methods
 
 --Modules
 local Types = require(script.Parent.Types)
-local Error = require(script.Parent.Utils.Error)
-local Signal = require(script.Parent.Packages.Signal)
+local Error = require(script.Parent.Modules.Utils.Error)
+local Signal = require(script.Parent.Modules.Packages.Signal)
 
 function Loader.New<T>(Profile, Id: string, DefaultData: T, DefaultKey: Types.FileKey?, Locked: boolean?)
 	local self = setmetatable({}, Methods)

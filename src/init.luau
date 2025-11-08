@@ -23,8 +23,8 @@ local RunService = game:GetService("RunService")
 --Modules
 local Store = require(script.Store)
 local Types = require(script.Types)
-local Error = require(script.Utils.Error)
-local Signal = require(script.Packages.Signal)
+local Error = require(script.Modules.Utils.Error)
+local Signal = require(script.Modules.Packages.Signal)
 
 if RunService:IsClient() then
 	Error("TraditionalSave2 is server only! don't require it on the client!")
@@ -95,7 +95,12 @@ export type Profile<Methods = {}> = {
 	OnSave: Signal.Signal<>,
 }
 
-export type PlayerProfiles<Methods> = Types.PlayerProfiles<Methods>
+export type PlayerProfiles<Methods> = {
+	Profiles: { [Player]: Profile<Methods> },
+
+	OnPlayerAdded: Signal.Signal<(Profile<Methods>, Player)>,
+	OnPlayerRemoving: Signal.Signal<(Profile<Methods>, Player)>,
+}
 
 --Returns a Store Object using the given StoreName.
 function TraditionalSave2.GetStore(StoreName: string, Config: Types.StoreConfig?): Store

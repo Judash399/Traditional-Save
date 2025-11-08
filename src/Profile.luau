@@ -8,9 +8,9 @@ Methods.__index = Methods
 --Modules
 local Types = require(script.Parent.Types)
 local Loader = require(script.Parent.Loader)
-local Signal = require(script.Parent.Packages.Signal)
-local DeepCopy = require(script.Parent.Packages.DeepCopy)
-local Error = require(script.Parent.Utils.Error)
+local Signal = require(script.Parent.Modules.Packages.Signal)
+local DeepCopy = require(script.Parent.Modules.Packages.DeepCopy)
+local Error = require(script.Parent.Modules.Utils.Error)
 
 function Profile.New(Store, Key: Types.Key): (Types.Profile<{}> | Types.Error, boolean?)
 	local self = setmetatable({}, Methods)
@@ -43,7 +43,7 @@ function Profile.New(Store, Key: Types.Key): (Types.Profile<{}> | Types.Error, b
 			Meta = {
 				ActiveSession = false,
 				LastTimeSave = os.time(),
-				Version = require(script.Parent.Utils.Version)
+				Version = require(script.Parent.Modules.Utils.Version)
 			},
 			Files = {}
 		}

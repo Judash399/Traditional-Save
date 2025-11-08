@@ -5,8 +5,8 @@ local Players = game:GetService("Players")
 
 --Modules
 local Types = require(script.Parent.Types)
-local Error = require(script.Parent.Utils.Error)
-local Signal = require(script.Parent.Packages.Signal)
+local Error = require(script.Parent.Modules.Utils.Error)
+local Signal = require(script.Parent.Modules.Packages.Signal)
 
 local PlayerProfiles = {}
 
