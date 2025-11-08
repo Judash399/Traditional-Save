@@ -1,4 +1,5 @@
 --!strict
+--A collection of types used by the private API.
 
 --Modules
 local Signal = require(script.Parent.Packages.Signal)
@@ -18,33 +19,44 @@ export type Key = string | number
 --Just a key, but its for file index's, not DataStore keys. 
 export type FileKey = string | number
 
-export type Error = {
-	Error: true,
-	Reason: string,
-}
-
-
-export type StoreMeta = {
-	ActiveSession: boolean,
-	LastTimeSave: number,
-	Version: string,
-}
-
 export type StoreData = {
 	Meta: StoreMeta,
 	Files: {[FileKey]: any},
 }
 
-export type ProfileMethod = (... any) -> (... any) 
-
-export type MethodMap = { [string]: (... any) -> (... any) }
-
-
-type MethodList = {[string]: ProfileMethod | MethodList}
-
-export type Profile<Methods = MethodMap> = {
-	Error: boolean,
+--Types
+export type Store = {
+	--------PUBLIC API--------
+	Config: StoreConfig,
+	StoreName: string,
 	
+	--Methods
+	ProfileFromPlayers: <Methods>(self: Store, callback: (Profile<MethodMap>, Player) -> ()) -> PlayerProfiles<Methods>,
+
+	NewProfile: typeof(
+		--Creates a new profile object using the given key.
+		function(self: Store, Key: Key): (Profile<{}> | Error) end
+	),
+	NewPlayerProfile: (self: Store, Player: Player) -> Profile<{}> | Error,
+	
+	--Signals
+	OnProfileAdded: Signal.Signal<Profile<{}>>,
+	OnProfileRemoving: Signal.Signal<Profile<{}>>,
+	OnProfileCreated: Signal.Signal<Profile<{}>>,
+	
+	--------PRIVATE API--------
+	_DataStore: DataStore,
+	
+	_Profiles: {Profile<{}>},
+	
+	_GetDataStoreData: (self: Store, StoreKey: Key) -> (boolean, any | Error),
+	
+	_SaveImmediate: (self: Store, Profile: Profile<{}>) -> boolean,
+}
+
+export type Profile<Methods = {}> = {
+	--------PUBLIC API--------
+	Error: boolean,
 	Methods: Methods,
 	
 	--Methods
@@ -60,7 +72,37 @@ export type Profile<Methods = MethodMap> = {
 	--Signals
 	OnDestroying: Signal.Signal<>,
 	OnSave: Signal.Signal<>,
+
+	--------PRIVATE API--------
+	_Store: Store,
+	_Key: Key,
+	_DataStoreData: StoreData,
+	_DataToSave: StoreData,
+	_ReadyToSave: boolean,
+	_LastSaveTime: number,
+	_Loaders: {Loader<any>},
+	
+	_GetFileData: (self: Profile<Methods>, fileKey: FileKey, defaultData: any) -> (any, boolean),
+	_Save: (self: Profile<Methods>) -> (),
 }
+
+export type Error = {
+	Error: true,
+	Reason: string,
+}
+
+
+export type StoreMeta = {
+	ActiveSession: boolean,
+	LastTimeSave: number,
+	Version: string,
+}
+
+export type ProfileMethod = (... any) -> (... any) 
+
+export type MethodMap = { [string]: (... any) -> (... any) }
+
+export type MethodList = {[string]: ProfileMethod | MethodList}
 
 export type Loader<T> = {
 	Data: T,
@@ -82,23 +124,6 @@ export type Loader<T> = {
 	OnSaving: Signal.Signal<FileKey>,
 }
 
-export type Store = {
-	Config: StoreConfig,
-	StoreName: string,
-	
-	--Methods
-	ProfileFromPlayers: <Methods>(self: Store, callback: (Profile<MethodMap>, Player) -> ()) -> PlayerProfiles<Methods>,
-
-	NewProfile: (self: Store, Key: Key) -> (Profile | Error),
-	NewPlayerProfile: (self: Store, Player: Player) -> Profile | Error,
-	
-	--Signals
-	OnProfileAdded: Signal.Signal<Profile>,
-	OnProfileRemoving: Signal.Signal<Profile>,
-	OnProfileCreated: Signal.Signal<Profile>,
-}
-
-
 export type PlayerProfiles<MethodMap = MethodMap> = {
 	Profiles: { [Player]: Profile<MethodMap> },
 
@@ -106,9 +131,7 @@ export type PlayerProfiles<MethodMap = MethodMap> = {
 	OnPlayerRemoving: Signal.Signal<(Profile<MethodMap>, Player)>,
 }
 
-
---Hidden Types (Types with hidden variables) --------------------------
-
+--[[
 export type HiddenProfile = Profile & {
 	_Store: HiddenStore,
 	_Key: Key,
@@ -133,15 +156,6 @@ export type HiddenLoader<T> = Loader<T> & {
 	_BindedObjects: {{object: any, cleanup: string?}},
 	_Destroy: (self: HiddenLoader<T>) -> (),
 }
-
-export type HiddenStore = Store & {
-	_DataStore: DataStore,
-	
-	_Profiles: {HiddenProfile},
-	
-	_GetDataStoreData: (self: Store, StoreKey: Key) -> (boolean, any | Error),
-	
-	_SaveImmediate: (self: Store, Profile: HiddenProfile) -> boolean,
-}
+]]
 
 return {}

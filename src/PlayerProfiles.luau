@@ -10,10 +10,10 @@ local Signal = require(script.Parent.Packages.Signal)
 
 local PlayerProfiles = {}
 
-function PlayerProfiles.New(Store: Types.HiddenStore, callback: (Types.Profile<Types.MethodMap>, Player) -> ())
+function PlayerProfiles.New(Store, callback)
 	local callback = callback
 	
-	local self = {}
+	local self = setmetatable({})
 	
 	self.Profiles = {}
 	
