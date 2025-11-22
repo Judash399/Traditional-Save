@@ -49,6 +49,16 @@ extra_css:
   - docsAssets/colors.css
   - docsAssets/smooth-scroll.css
 
+plugins:
+  - mike:
+
+extra:
+  version:
+    provider: mike
+    default: stable
+    alias: true
+
+
 nav:
   - Home: index.md
   - The Basics:
