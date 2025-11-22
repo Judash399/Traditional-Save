@@ -3,7 +3,7 @@ theme:
   name: material
   logo: docsAssets/Icon.png
   favicon: docsAssets/Icon.png
-  custom_dir: docsAssets/overrides
+  custom_dir: docs/overrides
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
