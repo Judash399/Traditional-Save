@@ -3,3 +3,12 @@
 {% block announce %}
 This is an unfinished version of TraditionalSave2!
 {% endblock %}
+
+{% extends "base.html" %}
+
+{% block outdated %}
+  You're not viewing the latest version.
+  <a href="{{ '../' ~ base_url }}"> 
+    <strong>Click here to go to latest.</strong>
+  </a>
+{% endblock %}
