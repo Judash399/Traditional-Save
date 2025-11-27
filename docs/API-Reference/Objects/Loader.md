@@ -5,7 +5,8 @@ A Loader is an object attached to a [Profile](../Profile.md) that provides acces
 
 ## <img src="/docsAssets/property.png" width="20"> Properties
 
-* *Data* - The data for the currently loaded file. Although this works, its recomended to use `Loader:GetData()` to make your intention more clear, and to help prevent bugs.
+### Data: any
+The data for the currently loaded file. Although this works, its recomended to use `Loader:GetData()` to make your intention more clear, and to help prevent bugs.
 
 ## <img src="/docsAssets/function.png" width="20"> Methods
 

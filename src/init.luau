@@ -37,7 +37,11 @@ export type Error = Types.Error
 export type FileKey = Types.FileKey
 
 export type Store = {
+	
+	--The configuration table that is used for everything that uses this store. This can be modified after creation but it is likely that certain properties and methods will not update.
 	Config: StoreConfig,
+
+	--The name of the datastore that the Store will use. <br> <strong>This is not recomended to be changed after creation because the DataStore being used will not update.<strong>
 	StoreName: string,
 	
 	---------Methods---------
@@ -67,6 +71,7 @@ export type Store = {
 }
 
 export type Loader<T> = {
+	--The data for the currently loaded file. Although this works, its recomended to use Loader:GetData() to make your intention more clear, and to help prevent bugs.
 	Data: T,
 	
 	---------Methods---------
@@ -114,7 +119,10 @@ export type Loader<T> = {
 }
 
 export type Profile<Methods = {}> = {
+	--Used to make checking if creation of a profile errored or not in strict mode easier. Doesn't serve any actual purpose aside from that.
 	Error: boolean,
+
+	--List of custom methods which is intended to be overwritten with <code>Profile:SetMethods(Methods)</code>
 	Methods: Methods,
 	
 	---------Methods---------

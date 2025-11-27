@@ -8,7 +8,7 @@ A Profile is an object that stores data and provides methods to interact with it
 Used to make checking if creation of a profile errored or not in strict mode easier. Doesn't serve any actual purpose aside from that.
 
 ### Methods: \{[***string***]: (***...any***) -> (***...any***)}
-List of custom methods which is intended to be overwritten with: `Profile:SetMethods(Methods)`. 
+List of custom methods which is intended to be overwritten with `Profile:SetMethods(Methods)`. 
 For more information check out [Defining Methods](../../the-basics/defining-methods).
 
 ## <img src="/docsAssets/function.png" width="20"> Methods
