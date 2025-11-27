@@ -46,6 +46,22 @@ local Translations = {
         Decode = function(Data)
             return Color3.new(Data.R, Data.G, Data.B)
         end
+    },
+    UDim = {
+        Encode = function(Object: UDim)
+            return {Object.Scale, Object.Offset}
+        end,
+        Decode = function(Data)
+            return UDim.new(Data[1], Data[2])
+        end
+    },
+    UDim2 = {
+        Encode = function(Object: UDim2)
+            return {X = {Object.X.Scale, Object.X.Offset}, Y = {Object.Y.Scale, Object.Y.Offset}}
+        end,
+        Decode = function(Data)
+            return UDim2.new(Data.X[1], Data.X[2], Data.Y[1], Data.Y[2])
+        end
     }
 }
 

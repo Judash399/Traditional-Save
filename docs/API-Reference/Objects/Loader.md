@@ -17,7 +17,7 @@ Loader:GetData()
 Returns the data for the currently loaded file. Throws an error if there is no loaded file.
 
 <h4>Parameters:</h4>
-* *Loader* - The loader you want to get the data from.
+* *Loader* - The *Loader* you want to get the data from.
 
 <h4>Returns:</h4>
 * *Data* - A reference to the data the in the loaded file.
@@ -29,10 +29,10 @@ Returns the data for the currently loaded file. Throws an error if there is no l
 Loader:Save(NewData?)
 ```
 <h4>Description:</h4>
-Marks the [Profile](../Profile.md) the given loader is attached too, to save the currently loaded file. Uses NewData as the files new data if its passed or just `Loader.Data`.
+Marks the [Profile](../Profile.md) the given *Loader* is attached too, to save the currently loaded file. Uses NewData as the files new data if its passed or just `Loader.Data`.
 
 <h4>Parameters:</h4>
-* *Loader* - The loader you want to save from.
+* *Loader* - The *Loader* you want to save from.
 
 <br>
 
@@ -41,10 +41,10 @@ Marks the [Profile](../Profile.md) the given loader is attached too, to save the
 Loader:Unload()
 ```
 <h4>Description:</h4>
-Makes the given loader load out of the currently loaded file. Throws an error if already not loaded in a file or if the loader is locked.
+Makes the given *Loader* load out of the currently loaded file. Throws an error if already not loaded in a file or if the *Loader* is locked.
 
 <h4>Parameters:</h4>
-* *Loader* - The loader you want to load out of.
+* *Loader* - The *Loader* you want to load out of.
 
 <br>
 
@@ -53,7 +53,7 @@ Makes the given loader load out of the currently loaded file. Throws an error if
 Loader:LoadInto(Key)
 ```
 <h4>Description:</h4>
-Makes the given loader load into a specified file. Throws an error if already loaded into a file or if the loader is locked.
+Makes the given *Loader* load into a specified file. Throws an error if already loaded into a file or if the *Loader* is locked.
 
 <h4>Parameters:</h4>
 * *Loader* - The loader you want to load into the given file.
@@ -80,7 +80,7 @@ Loader:BindTo(Object, Cleanup?)
 Binds an object to the currently loaded file. If the file is unloaded or the profile is deleted, this object will be destroyed. Check out [Binding to Loaders](../../../the-basics/binding-to-loaders) for more information.
 
 <h4>Parameters:</h4>
-* *Loader* - The loader to bind the object to.
+* *Loader* - The *Loader* to bind the object to.
 * *Object* - The object to bind to the file.
 * *Cleanup?* - The name of the cleanup method for the object, If your object isnt an table, you don't need to pass this parameter.
 
@@ -94,7 +94,7 @@ Binds an object to the currently loaded file. If the file is unloaded or the pro
 ### OnLoaded
 
 <h4> Fires: </h4>
-Fires whenever the Loader loads into a file.
+Fires whenever the *Loader* loads into a file.
 
 <h4> Arguments: </h4>
 * *[FileKey](../../Types/FileKey)* - The key for the file that was loaded into.
@@ -104,13 +104,38 @@ Fires whenever the Loader loads into a file.
 ### OnUnloaded
 
 <h4> Fires: </h4>
-Fires whenever the Loader loads out of a file.
+Fires whenever the *Loader* loads out of a file.
+
+<br>
+
+### OnUnloading
+
+<h4> Fires: </h4>
+Fires before the *Loader* loads out of a file.
+
+<h4> Arguments: </h4>
+* *[FileKey](../../Types/FileKey)* - The key for the file that is being unloaded.
 
 <br>
 
 ### OnFileCreated
 <h4> Fires: </h4>
-Fires whenever the Loader loads into a file that hasnt been loaded into before, meaning that its a new file.
+Fires whenever the *Loader* loads into a file that hasnt been loaded into before, meaning that its a new file.
 
 <h4> Arguments: </h4>
 * *[FileKey](../../Types/FileKey)* - The key for the file that was loaded into.
+
+### OnSaving
+
+<h4> Fires: </h4>
+Fires before the *Loader* marks the attached [Profile](../Profile.md) for saving.
+
+<h4> Arguments: </h4>
+* *[FileKey](../../Types/FileKey)* - The key for the file that is being saved.
+
+<br>
+
+<h4> Arguments: </h4>
+* *[FileKey](../../Types/FileKey)* - The key for the file that is being unloaded.
+
+<br>

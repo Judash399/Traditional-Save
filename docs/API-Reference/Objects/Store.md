@@ -66,21 +66,21 @@ Creates a new [Profile](../Profile) attached to a player using the players userI
 ### OnProfileAdded
 
 <h4> Fires: </h4>
-Fires whenever a profile is added to the store.
+Fires whenever a [Profile](../Profile) is added to the store.
 
 <h4> Arguments: </h4>
-* *[Profile](../Profile)* - The profile that was added.
+* *Profile* - The [Profile](../Profile) that was added.
 
 ### OnProfileRemoving
 <h4> Fires: </h4>
-Fires right before a profile is removed from the store.
+Fires right before a [Profile](../Profile) is removed from the store.
 
 <h4> Arguments: </h4>
-* *[Profile](../Profile)* - The profile thats being removed.
+* *Profile* - The [Profile](../Profile) thats being removed.
 
 ### OnProfileCreated
 <h4> Fires: </h4>
-Fires whenever a profile is added that has no data attached to it, and was created for the first time.
+Fires whenever a [Profile](../Profile) is added that has no data attached to it, and was created for the first time.
 
 <h4> Arguments: </h4>
-* *[Profile](../Profile)* - The profile that was created.
+* *Profile* - The [Profile](../Profile) that was created.

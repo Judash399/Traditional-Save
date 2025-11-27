@@ -57,7 +57,7 @@ Creteas a new *[Loader](../Loader)* Object attached to the given *Profile* with 
 Proflie:Destroy()
 ```
 <h4>Description:</h4>
-Removes all dependencys and strong connections to the Profile, and turns it into a frozen empty table. The Profile will get garbage collected once you remove your remaining references to it. 
+Removes strong connections, and freezes the profile, allowing it to be garbage collected.
 
 <h4>Parameters:</h4>
 * *Profile* - The Profile you want to destroy.
@@ -83,7 +83,7 @@ For more information check out [Defining Methods](../../the-basics/defining-meth
 Profile:IsFileLoaded(FileKey)
 ```
 <h4>Description:</h4>
-Returns a boolean determining if the passed file is currently loaded by a *[Loader](../Loader)* attached to this profile.
+Returns a boolean determining if the passed file is currently loaded by a *[Loader](../Loader)* attached to this Profile.
 <h4>Parameters:</h4>
 * *Profile* - The profile you want to check.
 * *FileKey* - The [FileKey](../../Types/FileKey) for the file you want to check is loaded.
@@ -111,13 +111,27 @@ Copies the data from the *FromKey* file into the *ToKey* file for this profile.
 Profile:DeleteFile(FileKey)
 ```
 <h4>Description:</h4>
-Deletes the data from the *FileKey*.
+Deletes the data from the given *FileKey*.
 
 <h4>Parameters:</h4>
 * *Profile* - The profile contianing the file you want to delete.
 * *FromKey* - The [FileKey](../../Types/FileKey) for the file you want to delete.
 
 <br>
+
+### ReadDataBulk
+```lua
+Profile:ReadDataBulk(FileKeys)
+```
+<h4>Description:</h4>
+Returns a dictonary of the data for each given FileKey.
+
+<h4>Parameters:</h4>
+* *Profile* - The profile you want to read from.
+* *FileKeys* - The [FileKeys](../../Types/FileKey) that you want to use.
+
+<h4>Returns:</h4>
+* *FileData* - The Dictonary of data where a key gives a files data. This data is a copy and modifying it will not modify the file.
 
 ## <img src="/docsAssets/event.png" width="20"> Signals
 
