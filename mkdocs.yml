@@ -50,6 +50,7 @@ extra_css:
   - docsAssets/smooth-scroll.css
 
 plugins:
+  - search
   - mike:
 
 extra:
