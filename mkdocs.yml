@@ -26,7 +26,6 @@ theme:
       - header.autohide
       - search.suggest
       - search.highlight
-      - announce.dismiss
   font:
     text: Roboto
     code: Roboto Mono
