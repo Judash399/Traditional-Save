@@ -125,6 +125,48 @@
     
     
     
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.1-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208M208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.1-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208M208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
     
   </nav>
   
@@ -1240,6 +1282,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-any" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data: any
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1346,9 +1403,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onunloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      OnUnloading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onfilecreated" class="md-nav__link">
     <span class="md-ellipsis">
       OnFileCreated
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onsaving" class="md-nav__link">
+    <span class="md-ellipsis">
+      OnSaving
     </span>
   </a>
   
@@ -1448,6 +1523,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-any" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data: any
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1554,9 +1644,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onunloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      OnUnloading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#onfilecreated" class="md-nav__link">
     <span class="md-ellipsis">
       OnFileCreated
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onsaving" class="md-nav__link">
+    <span class="md-ellipsis">
+      OnSaving
     </span>
   </a>
   
@@ -1587,9 +1695,8 @@
 <h2 id="description">Description</h2>
 <p>A Loader is an object attached to a <a href="../Profile.md">Profile</a> that provides access to a file. It allows you to read, modify, save, and unload the data, as well as bind objects to a file so they get destroyed when the file is unloaded.</p>
 <h2 id="properties"><img src="/docsAssets/property.png" width="20"> Properties</h2>
-<ul>
-<li><em>Data</em> - The data for the currently loaded file. Although this works, its recomended to use <code>Loader:GetData()</code> to make your intention more clear, and to help prevent bugs.</li>
-</ul>
+<h3 id="data-any">Data: any</h3>
+<p>The data for the currently loaded file. Although this works, its recomended to use <code>Loader:GetData()</code> to make your intention more clear, and to help prevent bugs.</p>
 <h2 id="methods"><img src="/docsAssets/function.png" width="20"> Methods</h2>
 <h3 id="getdata">GetData</h3>
 <div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">Loader</span><span class="p">:</span><span class="nf">GetData</span><span class="p">()</span>
@@ -1598,7 +1705,7 @@
 <p>Returns the data for the currently loaded file. Throws an error if there is no loaded file.</p>
 <h4>Parameters:</h4>
 <ul>
-<li><em>Loader</em> - The loader you want to get the data from.</li>
+<li><em>Loader</em> - The <em>Loader</em> you want to get the data from.</li>
 </ul>
 <h4>Returns:</h4>
 <ul>
@@ -1609,27 +1716,27 @@
 <div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">Loader</span><span class="p">:</span><span class="nf">Save</span><span class="p">(</span><span class="nv">NewData</span><span class="err">?</span><span class="p">)</span>
 </span></code></pre></div>
 <h4>Description:</h4>
-<p>Marks the <a href="../Profile.md">Profile</a> the given loader is attached too, to save the currently loaded file. Uses NewData as the files new data if its passed or just <code>Loader.Data</code>.</p>
+<p>Marks the <a href="../Profile.md">Profile</a> the given <em>Loader</em> is attached too, to save the currently loaded file. Uses NewData as the files new data if its passed or just <code>Loader.Data</code>.</p>
 <h4>Parameters:</h4>
 <ul>
-<li><em>Loader</em> - The loader you want to save from.</li>
+<li><em>Loader</em> - The <em>Loader</em> you want to save from.</li>
 </ul>
 <p><br></p>
 <h2 id="unload">Unload</h2>
 <div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">Loader</span><span class="p">:</span><span class="nf">Unload</span><span class="p">()</span>
 </span></code></pre></div>
 <h4>Description:</h4>
-<p>Makes the given loader load out of the currently loaded file. Throws an error if already not loaded in a file or if the loader is locked.</p>
+<p>Makes the given <em>Loader</em> load out of the currently loaded file. Throws an error if already not loaded in a file or if the <em>Loader</em> is locked.</p>
 <h4>Parameters:</h4>
 <ul>
-<li><em>Loader</em> - The loader you want to load out of.</li>
+<li><em>Loader</em> - The <em>Loader</em> you want to load out of.</li>
 </ul>
 <p><br></p>
 <h2 id="loadinto">LoadInto</h2>
 <div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">Loader</span><span class="p">:</span><span class="nf">LoadInto</span><span class="p">(</span><span class="nv">Key</span><span class="p">)</span>
 </span></code></pre></div>
 <h4>Description:</h4>
-<p>Makes the given loader load into a specified file. Throws an error if already loaded into a file or if the loader is locked.</p>
+<p>Makes the given <em>Loader</em> load into a specified file. Throws an error if already loaded into a file or if the <em>Loader</em> is locked.</p>
 <h4>Parameters:</h4>
 <ul>
 <li><em>Loader</em> - The loader you want to load into the given file.</li>
@@ -1656,7 +1763,7 @@
 <p>Binds an object to the currently loaded file. If the file is unloaded or the profile is deleted, this object will be destroyed. Check out <a href="../../../the-basics/binding-to-loaders">Binding to Loaders</a> for more information.</p>
 <h4>Parameters:</h4>
 <ul>
-<li><em>Loader</em> - The loader to bind the object to.</li>
+<li><em>Loader</em> - The <em>Loader</em> to bind the object to.</li>
 <li><em>Object</em> - The object to bind to the file.</li>
 <li><em>Cleanup?</em> - The name of the cleanup method for the object, If your object isnt an table, you don't need to pass this parameter.</li>
 </ul>
@@ -1668,7 +1775,7 @@
 <h2 id="signals"><img src="/docsAssets/event.png" width="20"> Signals</h2>
 <h3 id="onloaded">OnLoaded</h3>
 <h4> Fires: </h4>
-<p>Fires whenever the Loader loads into a file.</p>
+<p>Fires whenever the <em>Loader</em> loads into a file.</p>
 <h4> Arguments: </h4>
 <ul>
 <li><em><a href="../../Types/FileKey">FileKey</a></em> - The key for the file that was loaded into.</li>
@@ -1676,15 +1783,36 @@
 <p><br></p>
 <h3 id="onunloaded">OnUnloaded</h3>
 <h4> Fires: </h4>
-<p>Fires whenever the Loader loads out of a file.</p>
+<p>Fires whenever the <em>Loader</em> loads out of a file.</p>
+<p><br></p>
+<h3 id="onunloading">OnUnloading</h3>
+<h4> Fires: </h4>
+<p>Fires before the <em>Loader</em> loads out of a file.</p>
+<h4> Arguments: </h4>
+<ul>
+<li><em><a href="../../Types/FileKey">FileKey</a></em> - The key for the file that is being unloaded.</li>
+</ul>
 <p><br></p>
 <h3 id="onfilecreated">OnFileCreated</h3>
 <h4> Fires: </h4>
-<p>Fires whenever the Loader loads into a file that hasnt been loaded into before, meaning that its a new file.</p>
+<p>Fires whenever the <em>Loader</em> loads into a file that hasnt been loaded into before, meaning that its a new file.</p>
 <h4> Arguments: </h4>
 <ul>
 <li><em><a href="../../Types/FileKey">FileKey</a></em> - The key for the file that was loaded into.</li>
 </ul>
+<h3 id="onsaving">OnSaving</h3>
+<h4> Fires: </h4>
+<p>Fires before the <em>Loader</em> marks the attached <a href="../Profile.md">Profile</a> for saving.</p>
+<h4> Arguments: </h4>
+<ul>
+<li><em><a href="../../Types/FileKey">FileKey</a></em> - The key for the file that is being saved.</li>
+</ul>
+<p><br></p>
+<h4> Arguments: </h4>
+<ul>
+<li><em><a href="../../Types/FileKey">FileKey</a></em> - The key for the file that is being unloaded.</li>
+</ul>
+<p><br></p>
 
 
 
@@ -1781,7 +1909,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tabs", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "stable", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tabs", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "search.suggest", "search.highlight", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
